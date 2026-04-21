@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Vendas PAP - Cadastro de Plano</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+       tailwind.config = {
+         darkMode: "class",
+         theme: {
+           extend: {
+             "colors": {
+                     "surface-variant": "#dae2fd",
+                     "outline": "#727782",
+                     "tertiary-fixed-dim": "#b7c8e1",
+                     "on-tertiary-fixed": "#0b1c30",
+                     "surface-bright": "#faf8ff",
+                     "surface-container": "#eaedff",
+                     "on-surface": "#131b2e",
+                     "outline-variant": "#c2c6d2",
+                     "on-background": "#131b2e",
+                     "inverse-on-surface": "#eef0ff",
+                     "primary-fixed": "#d4e3ff",
+                     "primary": "#004782",
+                     "error-container": "#ffdad6",
+                     "on-primary-container": "#c1d9ff",
+                     "on-error": "#ffffff",
+                     "on-tertiary-container": "#c8d9f3",
+                     "surface": "#faf8ff",
+                     "tertiary-fixed": "#d3e4fe",
+                     "on-secondary-fixed-variant": "#00513a",
+                     "error": "#ba1a1a",
+                     "on-surface-variant": "#424751",
+                     "on-secondary": "#ffffff",
+                     "on-secondary-container": "#007151",
+                     "secondary-fixed-dim": "#68dbae",
+                     "secondary-fixed": "#86f8c9",
+                     "on-tertiary-fixed-variant": "#38485d",
+                     "surface-tint": "#1960a6",
+                     "surface-container-highest": "#dae2fd",
+                     "secondary": "#006c4e",
+                     "inverse-primary": "#a4c9ff",
+                     "surface-container-low": "#f2f3ff",
+                     "surface-dim": "#d2d9f4",
+                     "on-secondary-fixed": "#002115",
+                     "on-primary": "#ffffff",
+                     "secondary-container": "#83f5c6",
+                     "surface-container-lowest": "#ffffff",
+                     "on-tertiary": "#ffffff",
+                     "primary-container": "#185fa5",
+                     "background": "#faf8ff",
+                     "primary-fixed-dim": "#a4c9ff",
+                     "tertiary": "#38475c",
+                     "on-primary-fixed-variant": "#004883",
+                     "surface-container-high": "#e2e7ff",
+                     "inverse-surface": "#283044",
+                     "on-primary-fixed": "#001c39",
+                     "tertiary-container": "#4f5f75",
+                     "on-error-container": "#93000a"
+             },
+             "borderRadius": {
+                     "DEFAULT": "0.25rem",
+                     "lg": "0.5rem",
+                     "xl": "0.75rem",
+                     "full": "9999px"
+             },
+             "spacing": {
+                     "lg": "24px",
+                     "gutter": "16px",
+                     "margin": "16px",
+                     "sm": "8px",
+                     "xl": "32px",
+                     "base": "4px",
+                     "xs": "4px",
+                     "md": "16px"
+             },
+             "fontFamily": {
+                     "label-md": ["Inter"],
+                     "label-sm": ["Inter"],
+                     "body-md": ["Inter"],
+                     "headline-sm": ["Inter"],
+                     "headline-lg": ["Inter"],
+                     "body-lg": ["Inter"],
+                     "headline-md": ["Inter"]
+             },
+             "fontSize": {
+                     "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                     "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                     "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+                     "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600"}],
+                     "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                     "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                     "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+             }
+           },
+         },
+       }
+    </script>
+    <style>
+         .material-symbols-outlined {
+             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+         }
+         body { font-family: 'Inter', sans-serif; }
+         .hide-scrollbar::-webkit-scrollbar { display: none; }
+         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+         body {
+           min-height: max(884px, 100dvh);
+         }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none docked full-width top-0 sticky flex justify-between items-center px-4 py-3 w-full z-50 font-['Inter'] antialiased tracking-tight">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border-2 border-primary">
+                <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4Hh4j-zNQKo3Q-26Nnougrc_HYykoM0X_V8iQKRTgm_43MASDsV8lqrW56flVj23pgUejdO2IpillBMBaqGx_VwP-Fxpts2C6UP5f9gmximSRQtMQFz75PhCYjvpUgKMv4np87bq6afEyBK3U2xqtgIj9MHNWYMf1rzKbLldYMHCbUUCP_nRJC9M0nEGmufdsgh-UjfWswIPBDPtcYOy3O6_Zhrefc51wXeFPagyvtjQqFnhROuyYMIEr_MRDcxfxkmzvBHdHDQ"/>
+            </div>
+            <span class="text-xl font-bold text-[#185FA5] dark:text-blue-400">Vendas PAP</span>
+        </div>
+        <button class="text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200 p-2 rounded-full">
+            <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+        </button>
+    </header>
+
+    <main class="flex-1 px-margin py-lg max-w-lg mx-auto w-full pb-32">
+        <!-- Progress Header -->
+        <div class="mb-xl">
+            <div class="flex justify-between items-end mb-sm">
+                <div>
+                    <h1 class="font-headline-lg text-headline-lg text-primary">Configuração do Plano</h1>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Etapa 3 de 4: Detalhes Técnicos</p>
+                </div>
+                <span class="font-label-md text-label-md text-primary bg-primary-fixed px-3 py-1 rounded-full">75%</span>
+            </div>
+            <div class="w-full h-2 bg-outline-variant rounded-full overflow-hidden">
+                <div class="h-full bg-primary w-[75%]"></div>
+            </div>
+        </div>
+
+        <!-- Form Card -->
+        <section class="bg-surface-container-lowest rounded-xl shadow-[0px_2px_4px_rgba(15,23,42,0.05)] p-md border border-slate-100 space-y-lg">
+            <form id="planForm" class="space-y-lg">
+                <!-- Plan Selection -->
+                <div class="space-y-xs">
+                    <label class="font-label-md text-label-md text-on-surface-variant ml-1" for="plano">Seleção de Plano</label>
+                    <div class="relative">
+                        <select class="w-full appearance-none bg-white border border-outline-variant rounded-xl px-md py-3 font-body-md text-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" id="plano" required>
+                            <option disabled selected value="">Selecione um plano corporativo</option>
+                            <option value="st1_1300">ST1-SEMI DEDICADO 1300MB PME</option>
+                            <option value="st1_1000">ST1-SEMI DEDICADO 1000MB PME</option>
+                            <option value="oferta_especial">(OFERTA ESPECIAL)</option>
+                            <option value="oferta_pinheiro">ST1+ OFERTA ESPECIAL PINHEIRO</option>
+                            <option value="todas_filiais">ST1+ (TODAS AS FILIAIS)</option>
+                        </select>
+                        <div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auto-filled Details Row -->
+                <div class="grid grid-cols-2 gap-md">
+                    <div class="space-y-xs">
+                        <label class="font-label-md text-label-md text-on-surface-variant ml-1">Velocidade (Download)</label>
+                        <div id="speedDisplay" class="bg-surface-container-low border border-outline-variant/30 rounded-xl px-md py-3 font-body-md text-body-md text-outline flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px]">speed</span>
+                            ---
+                        </div>
+                    </div>
+                    <div class="space-y-xs">
+                        <label class="font-label-md text-label-md text-on-surface-variant ml-1">Valor Mensal</label>
+                        <div id="priceDisplay" class="bg-surface-container-low border border-outline-variant/30 rounded-xl px-md py-3 font-body-md text-body-md text-outline flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px]">payments</span>
+                            ---
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment and Loyalty -->
+                <div class="grid grid-cols-2 gap-md">
+                    <div class="space-y-xs">
+                        <label class="font-label-md text-label-md text-on-surface-variant ml-1" for="vencimento">Dia Vencimento</label>
+                        <select class="w-full bg-white border border-outline-variant rounded-xl px-md py-3 font-body-md text-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" id="vencimento">
+                            <option>Dia 05</option>
+                            <option>Dia 10</option>
+                            <option selected>Dia 15</option>
+                            <option>Dia 20</option>
+                            <option>Dia 25</option>
+                        </select>
+                    </div>
+                    <div class="space-y-xs">
+                        <label class="font-label-md text-label-md text-on-surface-variant ml-1" for="fidelidade">Fidelidade</label>
+                        <div class="relative">
+                            <input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl px-md py-3 font-body-md text-body-md text-outline outline-none" id="fidelidade" readonly type="text" value="12 meses"/>
+                            <div class="absolute right-3 top-1/2 -translate-y-1/2">
+                                <span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Observations -->
+                <div class="space-y-xs">
+                    <label class="font-label-md text-label-md text-on-surface-variant ml-1" for="obs">Observações</label>
+                    <textarea class="w-full bg-white border border-outline-variant rounded-xl px-md py-3 font-body-md text-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none" id="obs" placeholder="Informações adicionais da instalação ou condições especiais..." rows="3"></textarea>
+                </div>
+
+                <!-- Navigation Actions -->
+                <div class="mt-lg grid grid-cols-2 gap-md">
+                    <button type="button" onclick="window.history.back()" class="flex items-center justify-center gap-2 py-3 px-md border border-primary text-primary font-label-md rounded-xl hover:bg-primary/5 active:scale-95 transition-all">
+                        <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                        Voltar
+                    </button>
+                    <button type="submit" class="flex items-center justify-center gap-2 py-3 px-md bg-primary text-white font-label-md rounded-xl shadow-[0px_4px_12px_rgba(15,23,42,0.08)] active:scale-95 transition-all">
+                        Próximo
+                        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- BottomNavBar -->
+    <nav class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 shadow-[0_-2px_10px_rgba(0,0,0,0.05)] fixed bottom-0 left-0 right-0 h-16 flex justify-around items-center px-4 pb-safe z-50 rounded-t-xl">
+        <a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-3 py-1 scale-95 active:scale-90 transition-transform duration-150 font-['Inter'] text-[12px] font-medium" href="dashboard.html">
+            <span class="material-symbols-outlined">home</span>
+            Início
+        </a>
+        <a class="flex flex-col items-center justify-center text-[#185FA5] dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 rounded-xl px-3 py-1 scale-95 active:scale-90 transition-transform duration-150 font-['Inter'] text-[12px] font-medium" href="#">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            Vendas
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-3 py-1 scale-95 active:scale-90 transition-transform duration-150 font-['Inter'] text-[12px] font-medium" href="#">
+            <span class="material-symbols-outlined">group</span>
+            Leads
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-3 py-1 scale-95 active:scale-90 transition-transform duration-150 font-['Inter'] text-[12px] font-medium" href="#">
+            <span class="material-symbols-outlined">menu</span>
+            Menu
+        </a>
+    </nav>
+
+    <script>
+        const planSelect = document.getElementById('plano');
+        const speedDisplay = document.getElementById('speedDisplay');
+        const priceDisplay = document.getElementById('priceDisplay');
+
+        const plans = {
+            'st1_1300': { speed: '1300 MB', price: 'R$ 19,90', note: '(1ª Mensalidade)' },
+            'st1_1000': { speed: '1000 MB', price: 'R$ 89,90', note: '' },
+            'oferta_especial': { speed: 'Variável', price: 'Sob consulta', note: '' },
+            'oferta_pinheiro': { speed: 'Especial', price: 'R$ 89,90', note: '' },
+            'todas_filiais': { speed: 'Especial', price: 'R$ 109,90', note: '' }
+        };
+
+        planSelect.addEventListener('change', (e) => {
+            const plan = plans[e.target.value];
+            if (plan) {
+                speedDisplay.innerHTML = `<span class="material-symbols-outlined text-[18px]">speed</span> ${plan.speed}`;
+                priceDisplay.innerHTML = `<span class="material-symbols-outlined text-[18px]">payments</span> ${plan.price} <span class="text-[10px] opacity-70 ml-1">${plan.note}</span>`;
+            }
+        });
+
+        const planForm = document.getElementById('planForm');
+        planForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Save data to localStorage
+            const selectedPlan = planSelect.options[planSelect.selectedIndex].text;
+            const planData = {
+                plano: selectedPlan,
+                velocidade: speedDisplay.innerText.replace('speed', '').trim(),
+                valor: priceDisplay.innerText.replace('payments', '').split('(')[0].trim(),
+                vencimento: document.getElementById('vencimento').value,
+                fidelidade: document.getElementById('fidelidade').value,
+                observacoes: document.getElementById('obs').value
+            };
+            localStorage.setItem('cadastro_plano', JSON.stringify(planData));
+            
+            window.location.href = 'cadastro_etapa4.html';
+        });
+    </script>
+</body>
+</html>

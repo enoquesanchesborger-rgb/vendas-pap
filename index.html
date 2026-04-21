@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#dae2fd",
+                        "outline": "#727782",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "surface-bright": "#faf8ff",
+                        "surface-container": "#eaedff",
+                        "on-surface": "#131b2e",
+                        "outline-variant": "#c2c6d2",
+                        "on-background": "#131b2e",
+                        "inverse-on-surface": "#eef0ff",
+                        "primary-fixed": "#d4e3ff",
+                        "primary": "#004782",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#c1d9ff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#c8d9f3",
+                        "surface": "#faf8ff",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-secondary-fixed-variant": "#00513a",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#424751",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#007151",
+                        "secondary-fixed-dim": "#68dbae",
+                        "secondary-fixed": "#86f8c9",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "surface-tint": "#1960a6",
+                        "surface-container-highest": "#dae2fd",
+                        "secondary": "#006c4e",
+                        "inverse-primary": "#a4c9ff",
+                        "surface-container-low": "#f2f3ff",
+                        "surface-dim": "#d2d9f4",
+                        "on-secondary-fixed": "#002115",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#83f5c6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#185fa5",
+                        "background": "#faf8ff",
+                        "primary-fixed-dim": "#a4c9ff",
+                        "tertiary": "#38475c",
+                        "on-primary-fixed-variant": "#004883",
+                        "surface-container-high": "#e2e7ff",
+                        "inverse-surface": "#283044",
+                        "on-primary-fixed": "#001c39",
+                        "tertiary-container": "#4f5f75",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "gutter": "16px",
+                        "margin": "16px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "base": "4px",
+                        "xs": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center justify-center p-margin">
+    <!-- Login Container -->
+    <main class="w-full max-w-sm flex flex-col items-center space-y-xl">
+        <!-- Brand Identity Section -->
+        <header class="flex flex-col items-center text-center space-y-md">
+            <div class="w-20 h-20 rounded-xl bg-primary-container flex items-center justify-center shadow-lg" data-alt="logo">
+                <span class="material-symbols-outlined text-white text-4xl" data-icon="sell">sell</span>
+            </div>
+            <div class="space-y-xs">
+                <h1 class="font-headline-lg text-headline-lg text-primary-container">Vendas PAP</h1>
+                <p class="font-body-md text-body-md text-on-surface-variant">Portal do Consultor Externo</p>
+            </div>
+        </header>
+        <!-- Form Section -->
+        <section class="w-full bg-surface-container-lowest p-lg rounded-xl shadow-[0_4px_12px_rgba(15,23,42,0.08)] space-y-lg">
+            <form id="loginForm" class="space-y-md">
+                <!-- Email Field -->
+                <div class="space-y-xs">
+                    <label class="font-label-md text-label-md text-on-surface" for="email">E-mail Corporativo</label>
+                    <div class="relative flex items-center">
+                        <span class="material-symbols-outlined absolute left-3 text-outline text-xl" data-icon="mail">mail</span>
+                        <input class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none font-body-md text-body-md" id="email" name="email" placeholder="seu@email.com.br" type="email" required/>
+                    </div>
+                </div>
+                <!-- Password Field -->
+                <div class="space-y-xs">
+                    <div class="flex justify-between items-center">
+                        <label class="font-label-md text-label-md text-on-surface" for="password">Senha</label>
+                        <a class="font-label-sm text-label-sm text-primary-container hover:underline" href="#">Esqueceu a senha?</a>
+                    </div>
+                    <div class="relative flex items-center">
+                        <span class="material-symbols-outlined absolute left-3 text-outline text-xl" data-icon="lock">lock</span>
+                        <input class="w-full pl-10 pr-12 py-3 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none font-body-md text-body-md" id="password" name="password" placeholder="••••••••" type="password" required/>
+                        <button class="absolute right-3 text-outline hover:text-primary transition-colors" type="button" id="togglePassword">
+                            <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Login Action -->
+                <div class="pt-sm">
+                    <button class="w-full bg-[#185FA5] text-white font-headline-sm text-headline-sm py-4 rounded-xl shadow-md active:scale-95 transition-all duration-150 flex items-center justify-center gap-2" type="submit">
+                        Entrar
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                    </button>
+                </div>
+            </form>
+            <!-- Biometric Option (Mobile Focus) -->
+            <div class="flex flex-col items-center space-y-md pt-md border-t border-outline-variant/30">
+                <p class="font-label-sm text-label-sm text-on-surface-variant">OU ACESSE COM</p>
+                <div class="flex gap-lg">
+                    <button class="w-12 h-12 flex items-center justify-center border border-outline-variant rounded-xl hover:bg-surface-container transition-colors">
+                        <span class="material-symbols-outlined text-primary-container" data-icon="fingerprint">fingerprint</span>
+                    </button>
+                    <button class="w-12 h-12 flex items-center justify-center border border-outline-variant rounded-xl hover:bg-surface-container transition-colors">
+                        <span class="material-symbols-outlined text-primary-container" data-icon="face">face</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Footer / Support -->
+        <footer class="flex flex-col items-center space-y-sm">
+            <p class="font-body-md text-body-md text-on-surface-variant">Não tem acesso?</p>
+            <button class="font-label-md text-label-md text-primary-container border-b border-primary-container pb-px hover:text-primary transition-colors">
+                Solicitar credenciais ao gestor
+            </button>
+            <div class="mt-xl pt-lg flex items-center gap-2 text-outline">
+                <span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+                <span class="font-label-sm text-label-sm">Versão 2.4.0 • PAP Systems</span>
+            </div>
+        </footer>
+    </main>
+    <!-- Decorative background element for premium feel -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-blue-400 to-secondary"></div>
+
+    <script>
+        // Toggle password visibility
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        
+        togglePassword.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            const icon = togglePassword.querySelector('.material-symbols-outlined');
+            icon.textContent = type === 'password' ? 'visibility' : 'visibility_off';
+        });
+
+        // Form submission logic
+        const loginForm = document.getElementById('loginForm');
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Mock authentication
+            if (email && password) {
+                console.log('Login attempt:', email);
+                // Redirect to dashboard (to be created)
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+    </script>
+</body>
+</html>

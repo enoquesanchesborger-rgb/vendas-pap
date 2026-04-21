@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#dae2fd",
+                        "outline": "#727782",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "surface-bright": "#faf8ff",
+                        "surface-container": "#eaedff",
+                        "on-surface": "#131b2e",
+                        "outline-variant": "#c2c6d2",
+                        "on-background": "#131b2e",
+                        "inverse-on-surface": "#eef0ff",
+                        "primary-fixed": "#d4e3ff",
+                        "primary": "#004782",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#c1d9ff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#c8d9f3",
+                        "surface": "#faf8ff",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-secondary-fixed-variant": "#00513a",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#424751",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#007151",
+                        "secondary-fixed-dim": "#68dbae",
+                        "secondary-fixed": "#86f8c9",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "surface-tint": "#1960a6",
+                        "surface-container-highest": "#dae2fd",
+                        "secondary": "#006c4e",
+                        "inverse-primary": "#a4c9ff",
+                        "surface-container-low": "#f2f3ff",
+                        "surface-dim": "#d2d9f4",
+                        "on-secondary-fixed": "#002115",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#83f5c6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#185fa5",
+                        "background": "#faf8ff",
+                        "primary-fixed-dim": "#a4c9ff",
+                        "tertiary": "#38475c",
+                        "on-primary-fixed-variant": "#004883",
+                        "surface-container-high": "#e2e7ff",
+                        "inverse-surface": "#283044",
+                        "on-primary-fixed": "#001c39",
+                        "tertiary-container": "#4f5f75",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "gutter": "16px",
+                        "margin": "16px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "base": "4px",
+                        "xs": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row overflow-hidden">
+    <!-- NavigationDrawer (Sidebar) -->
+    <aside class="hidden md:flex flex-col p-4 gap-2 h-full w-80 rounded-r-2xl bg-white dark:bg-slate-900 shadow-2xl divide-y divide-slate-100 dark:divide-slate-800 z-50">
+        <div class="pb-6 px-2">
+            <div class="flex items-center gap-3 py-4">
+                <div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant flex items-center justify-center">
+                    <img class="w-full h-full object-cover" data-alt="Professional headshot of a sales manager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5rQ3ThkP7y2J_9ewHW4RgGWLYTUuauktHInQfRdLuidRzEyFCCNPxzmgDBDQmoNTF7GY8vswlKW-VyH5lSpyVRGdsXdGYdTsJQ5zlHG4RR7R6d2eOKnkgRYq4eUUlBkC1Zxr4s6yzPnqUYuqEIEpErsELHO-oqMPBKUoor_ccn-f9aP_yqkNgeKMvAlnkZc51sglEvK72D5J8ZSE-IWN4kA7_wXpdJy0uky8lhwjp4cTesymy0LzSNGzgBu3sbX6xO7vpo0H-MQ"/>
+                </div>
+                <div>
+                    <h2 class="text-lg font-black text-[#185FA5] font-headline-sm">Consultor de Vendas</h2>
+                    <p class="text-slate-500 text-label-sm">ID: 98765</p>
+                </div>
+            </div>
+            <div class="mt-4 p-3 bg-primary-container rounded-xl text-on-primary-container">
+                <p class="text-label-sm opacity-80">Vendas hoje</p>
+                <p class="text-headline-sm font-bold">R$ 1.200</p>
+            </div>
+        </div>
+        <nav class="py-6 flex flex-col gap-1">
+            <a class="flex items-center gap-3 px-4 py-3 bg-blue-50 dark:bg-blue-900/30 text-[#185FA5] dark:text-blue-400 font-semibold rounded-lg transition-all duration-200" href="admin.html">
+                <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                <span class="text-sm font-label-md">Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:pl-2 transition-all duration-200 rounded-lg" href="#">
+                <span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+                <span class="text-sm font-label-md">Meus Pedidos</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:pl-2 transition-all duration-200 rounded-lg" href="#">
+                <span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+                <span class="text-sm font-label-md">Metas do Mês</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:pl-2 transition-all duration-200 rounded-lg" href="#">
+                <span class="material-symbols-outlined" data-icon="school">school</span>
+                <span class="text-sm font-label-md">Treinamentos</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:pl-2 transition-all duration-200 rounded-lg mt-auto" href="dashboard.html">
+                <span class="material-symbols-outlined" data-icon="settings">settings</span>
+                <span class="text-sm font-label-md">Voltar ao App</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Canvas -->
+    <main class="flex-1 flex flex-col min-w-0 bg-surface-bright h-screen overflow-y-auto">
+        <!-- TopAppBar -->
+        <header class="flex justify-between items-center px-4 py-3 w-full z-50 docked full-width top-0 sticky bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none">
+            <div class="flex items-center gap-4">
+                <button class="md:hidden p-2 text-slate-500">
+                    <span class="material-symbols-outlined" data-icon="menu">menu</span>
+                </button>
+                <h1 class="text-xl font-bold text-[#185FA5] dark:text-blue-400 font-['Inter'] antialiased tracking-tight">Vendas PAP</h1>
+            </div>
+            <div class="flex items-center gap-3">
+                <button class="p-2 rounded-full hover:bg-slate-50 text-slate-500 transition-colors">
+                    <span class="material-symbols-outlined" data-icon="search">search</span>
+                </button>
+                <button class="p-2 rounded-full hover:bg-slate-50 text-slate-500 transition-colors relative">
+                    <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                    <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+                </button>
+                <div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden hidden sm:block">
+                    <img class="w-full h-full object-cover" data-alt="smiling male professional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzLVBGRS1DXcThX72GV05aOlbFNtgcfBSH2FhhKOEF5WHDs_P740Vxzh_d8lgT0esu67XL-57Hft_oy4fiEWhnaUNyJVr6Fnn8nVqLraPcWz9n039I7axqv6DxitopstI-zPG2K5tM8UVf3oHIPJ4TAvR41MA-5E-On-wfErM1ug09mSY8r-a5xlh7fKT2OCKeHnpasr7l1TMynspStUPliMBDlpj-WtmzGhZ0vPEbv0mEsyp12rT_uSmBmSO_gwjIaR1hj3WaQA"/>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Body -->
+        <div class="p-4 md:p-lg space-y-lg pb-32 md:pb-lg">
+            <!-- Page Header & Key Metrics (Bento Style) -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+                <div class="md:col-span-2 p-6 bg-white dark:bg-slate-900 rounded-xl shadow-[0_2px_4px_rgba(15,23,42,0.05)] border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-headline-md font-headline-md text-on-surface">Gestão de Cadastros</h2>
+                        <p class="text-body-md text-on-surface-variant mt-1">Acompanhe e gerencie as adesões recentes da sua equipe PAP.</p>
+                    </div>
+                    <div class="mt-6 flex gap-4">
+                        <button onclick="window.location.href='cadastro.html'" class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-label-md flex items-center gap-2 shadow-sm transition-transform active:scale-95">
+                            <span class="material-symbols-outlined text-[18px]" data-icon="person_add">person_add</span>
+                            Novo Cadastro
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800">
+                    <span class="text-label-sm text-on-surface-variant uppercase tracking-wider">Conversão</span>
+                    <div class="mt-2 flex items-baseline gap-2">
+                        <span class="text-headline-lg font-headline-lg">78%</span>
+                        <span class="text-secondary text-label-sm font-bold flex items-center">
+                            <span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+                            +12%
+                        </span>
+                    </div>
+                    <div class="mt-4 h-2 bg-surface-container rounded-full overflow-hidden">
+                        <div class="h-full bg-secondary w-[78%] transition-all duration-1000"></div>
+                    </div>
+                </div>
+                <div class="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800">
+                    <span class="text-label-sm text-on-surface-variant uppercase tracking-wider">Ativos hoje</span>
+                    <div class="mt-2 flex items-baseline gap-2">
+                        <span class="text-headline-lg font-headline-lg">24</span>
+                        <span class="text-on-surface-variant text-label-sm">vendedores</span>
+                    </div>
+                    <div class="mt-4 flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-300"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-400"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-white bg-primary text-white text-[10px] flex items-center justify-center">+21</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters Section -->
+            <div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col md:flex-row gap-4 items-center">
+                <div class="relative w-full md:flex-1">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-[20px]" data-icon="search">search</span>
+                    <input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-body-md transition-all" placeholder="Buscar por nome ou vendedor..." type="text"/>
+                </div>
+                <div class="flex gap-2 w-full md:w-auto">
+                    <select class="flex-1 md:w-40 py-2 px-3 bg-white border border-outline-variant rounded-xl text-body-md focus:ring-primary focus:border-primary">
+                        <option>Status</option>
+                        <option>Aprovado</option>
+                        <option>Pendente</option>
+                        <option>Reprovado</option>
+                    </select>
+                    <select class="flex-1 md:w-40 py-2 px-3 bg-white border border-outline-variant rounded-xl text-body-md focus:ring-primary focus:border-primary">
+                        <option>Plano</option>
+                        <option>Premium</option>
+                        <option>Básico</option>
+                    </select>
+                    <button class="p-2 border border-outline-variant rounded-xl text-on-surface-variant hover:bg-slate-50">
+                        <span class="material-symbols-outlined" data-icon="tune">tune</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Data Table Card -->
+            <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 shadow-[0_2px_4px_rgba(15,23,42,0.05)] overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800">
+                                <th class="px-6 py-4 text-label-md text-on-surface-variant uppercase tracking-wider">Nome</th>
+                                <th class="px-6 py-4 text-label-md text-on-surface-variant uppercase tracking-wider">Vendedor</th>
+                                <th class="px-6 py-4 text-label-md text-on-surface-variant uppercase tracking-wider">Data</th>
+                                <th class="px-6 py-4 text-label-md text-on-surface-variant uppercase tracking-wider">Plano</th>
+                                <th class="px-6 py-4 text-label-md text-on-surface-variant uppercase tracking-wider">Status</th>
+                                <th class="px-6 py-4 text-label-md text-on-surface-variant uppercase tracking-wider text-right">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                            <!-- Row 1 -->
+                            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-blue-100 text-primary flex items-center justify-center font-bold text-xs">RM</div>
+                                        <div class="flex flex-col">
+                                            <span class="text-body-md font-semibold text-on-surface">Ricardo Mendes</span>
+                                            <span class="text-label-sm text-on-surface-variant">ricardo@email.com</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-body-md text-on-surface-variant">João Silva</td>
+                                <td class="px-6 py-4 text-body-md text-on-surface-variant">12 Mai, 2024</td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 rounded-md bg-blue-50 text-blue-700 text-label-sm font-bold">PREMIUM</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-label-sm font-bold">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Ativo
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <div class="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <button class="p-2 text-primary hover:bg-primary-fixed rounded-lg transition-colors">
+                                            <span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+                                        </button>
+                                        <button class="p-2 text-on-surface-variant hover:bg-surface-variant rounded-lg transition-colors">
+                                            <span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Row 2 -->
+                            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center font-bold text-xs">AS</div>
+                                        <div class="flex flex-col">
+                                            <span class="text-body-md font-semibold text-on-surface">Ana Souza</span>
+                                            <span class="text-label-sm text-on-surface-variant">ana.souza@mail.com</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-body-md text-on-surface-variant">Maria Oliveira</td>
+                                <td class="px-6 py-4 text-body-md text-on-surface-variant">11 Mai, 2024</td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 rounded-md bg-slate-100 text-slate-600 text-label-sm font-bold">BÁSICO</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-label-sm font-bold">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Pendente
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <div class="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <button class="p-2 text-primary hover:bg-primary-fixed rounded-lg transition-colors">
+                                            <span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+                                        </button>
+                                        <button class="p-2 text-on-surface-variant hover:bg-surface-variant rounded-lg transition-colors">
+                                            <span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Row 3 -->
+                            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs">FB</div>
+                                        <div class="flex flex-col">
+                                            <span class="text-body-md font-semibold text-on-surface">Felipe Batista</span>
+                                            <span class="text-label-sm text-on-surface-variant">felipe@empresa.com</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-body-md text-on-surface-variant">João Silva</td>
+                                <td class="px-6 py-4 text-body-md text-on-surface-variant">10 Mai, 2024</td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 rounded-md bg-blue-50 text-blue-700 text-label-sm font-bold">PREMIUM</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-error-container text-on-error-container text-label-sm font-bold">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-error"></span> Cancelado
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <div class="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <button class="p-2 text-primary hover:bg-primary-fixed rounded-lg transition-colors">
+                                            <span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+                                        </button>
+                                        <button class="p-2 text-on-surface-variant hover:bg-surface-variant rounded-lg transition-colors">
+                                            <span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 flex justify-between items-center border-t border-slate-100 dark:border-slate-800">
+                    <span class="text-label-sm text-on-surface-variant">Mostrando 1-10 de 156 cadastros</span>
+                    <div class="flex gap-2">
+                        <button class="p-2 border border-outline-variant rounded-lg hover:bg-white transition-colors disabled:opacity-50" disabled="">
+                            <span class="material-symbols-outlined text-[20px]" data-icon="chevron_left">chevron_left</span>
+                        </button>
+                        <button class="p-2 border border-outline-variant rounded-lg hover:bg-white transition-colors">
+                            <span class="material-symbols-outlined text-[20px]" data-icon="chevron_right">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FAB for Mobile -->
+        <button onclick="window.location.href='cadastro.html'" class="md:hidden fixed bottom-6 right-6 w-14 h-14 rounded-full bg-primary text-on-primary shadow-lg flex items-center justify-center active:scale-95 transition-transform z-50">
+            <span class="material-symbols-outlined">person_add</span>
+        </button>
+    </main>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Sucesso - Vendas PAP</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+       tailwind.config = {
+         darkMode: "class",
+         theme: {
+           extend: {
+             "colors": {
+                 "surface-variant": "#dae2fd",
+                 "outline": "#727782",
+                 "tertiary-fixed-dim": "#b7c8e1",
+                 "on-tertiary-fixed": "#0b1c30",
+                 "surface-bright": "#faf8ff",
+                 "surface-container": "#eaedff",
+                 "on-surface": "#131b2e",
+                 "outline-variant": "#c2c6d2",
+                 "on-background": "#131b2e",
+                 "inverse-on-surface": "#eef0ff",
+                 "primary-fixed": "#d4e3ff",
+                 "primary": "#004782",
+                 "error-container": "#ffdad6",
+                 "on-primary-container": "#c1d9ff",
+                 "on-error": "#ffffff",
+                 "on-tertiary-container": "#c8d9f3",
+                 "surface": "#faf8ff",
+                 "tertiary-fixed": "#d3e4fe",
+                 "on-secondary-fixed-variant": "#00513a",
+                 "error": "#ba1a1a",
+                 "on-surface-variant": "#424751",
+                 "on-secondary": "#ffffff",
+                 "on-secondary-container": "#007151",
+                 "secondary-fixed-dim": "#68dbae",
+                 "secondary-fixed": "#86f8c9",
+                 "on-tertiary-fixed-variant": "#38485d",
+                 "surface-tint": "#1960a6",
+                 "surface-container-highest": "#dae2fd",
+                 "secondary": "#006c4e",
+                 "inverse-primary": "#a4c9ff",
+                 "surface-container-low": "#f2f3ff",
+                 "surface-dim": "#d2d9f4",
+                 "on-secondary-fixed": "#002115",
+                 "on-primary": "#ffffff",
+                 "secondary-container": "#83f5c6",
+                 "surface-container-lowest": "#ffffff",
+                 "on-tertiary": "#ffffff",
+                 "primary-container": "#185fa5",
+                 "background": "#faf8ff",
+                 "primary-fixed-dim": "#a4c9ff",
+                 "tertiary": "#38475c",
+                 "on-primary-fixed-variant": "#004883",
+                 "surface-container-high": "#e2e7ff",
+                 "inverse-surface": "#283044",
+                 "on-primary-fixed": "#001c39",
+                 "tertiary-container": "#4f5f75",
+                 "on-error-container": "#93000a"
+             },
+             "borderRadius": {
+                 "DEFAULT": "0.25rem",
+                 "lg": "0.5rem",
+                 "xl": "0.75rem",
+                 "full": "9999px"
+             },
+             "spacing": {
+                 "lg": "24px",
+                 "gutter": "16px",
+                 "margin": "16px",
+                 "sm": "8px",
+                 "xl": "32px",
+                 "base": "4px",
+                 "xs": "4px",
+                 "md": "16px"
+             },
+             "fontFamily": {
+                 "label-md": ["Inter"],
+                 "label-sm": ["Inter"],
+                 "body-md": ["Inter"],
+                 "headline-sm": ["Inter"],
+                 "headline-lg": ["Inter"],
+                 "body-lg": ["Inter"],
+                 "headline-md": ["Inter"]
+             },
+             "fontSize": {
+                 "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                 "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                 "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+                 "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600"}],
+                 "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                 "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                 "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+             }
+           },
+         },
+       }
+    </script>
+    <style>
+         .material-symbols-outlined {
+             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+         }
+         body { font-family: 'Inter', sans-serif; }
+         body {
+           min-height: max(884px, 100dvh);
+         }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex flex-col">
+    <!-- Screen Content: Transactional Success -->
+    <main class="flex-1 flex items-center justify-center p-margin">
+        <div class="w-full max-w-md flex flex-col items-center text-center">
+            <!-- Success Animation Container -->
+            <div class="relative mb-xl">
+                <div class="w-24 h-24 rounded-full bg-secondary-container flex items-center justify-center shadow-[0_4px_12px_rgba(29,158,117,0.15)]">
+                    <span class="material-symbols-outlined text-[64px] text-on-secondary-container" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">
+                        check_circle
+                    </span>
+                </div>
+                <!-- Decorative Glow -->
+                <div class="absolute inset-0 bg-secondary-container blur-2xl opacity-20 -z-10 rounded-full scale-150"></div>
+            </div>
+
+            <!-- Success Messaging -->
+            <div class="space-y-sm mb-xl">
+                <h1 class="font-headline-lg text-headline-lg text-on-surface">
+                    Cadastro realizado com sucesso!
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-[280px] mx-auto">
+                    O novo cliente foi adicionado à sua base e os dados já estão disponíveis para consulta.
+                </p>
+            </div>
+
+            <!-- Action Summary Card -->
+            <div class="w-full bg-surface-container-low border border-outline-variant rounded-xl p-md mb-xl flex flex-col gap-sm shadow-sm">
+                <div class="flex items-center justify-between">
+                    <span class="font-label-md text-label-md text-outline">PROTOCOLO</span>
+                    <span class="font-label-md text-label-md text-on-surface">#PAP-2024-8892</span>
+                </div>
+                <div class="h-px bg-outline-variant/30 w-full"></div>
+                <div class="flex items-center justify-between">
+                    <span class="font-label-md text-label-md text-outline">DATA/HORA</span>
+                    <span id="dateTimeDisplay" class="font-label-md text-label-md text-on-surface">--</span>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="w-full space-y-md">
+                <button onclick="window.location.href='cadastro.html'" class="w-full bg-[#185FA5] text-white py-4 rounded-xl font-headline-sm text-headline-sm shadow-[0_4px_12px_rgba(24,95,165,0.2)] transition-transform active:scale-95 flex items-center justify-center gap-sm">
+                    <span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+                    Novo Cadastro
+                </button>
+                <button onclick="window.location.href='dashboard.html'" class="w-full bg-surface border border-outline text-on-surface py-4 rounded-xl font-label-md text-label-md transition-colors hover:bg-surface-container-high active:bg-surface-container-highest">
+                    Voltar ao Início
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Contextual Information (Bottom) -->
+    <footer class="p-margin text-center">
+        <p class="font-label-sm text-label-sm text-outline">
+            Vendas PAP • Sistema de Gestão de Leads
+        </p>
+    </footer>
+
+    <!-- Decorative Background Detail -->
+    <div class="fixed top-0 right-0 -z-20 opacity-10">
+        <div class="w-[400px] h-[400px] bg-gradient-to-br from-primary to-transparent rounded-full blur-[100px]"></div>
+    </div>
+
+    <script>
+        // Set current date/time
+        const now = new Date();
+        const options = { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+        document.getElementById('dateTimeDisplay').textContent = now.toLocaleDateString('pt-BR', options).replace('.', '');
+    </script>
+</body>
+</html>
