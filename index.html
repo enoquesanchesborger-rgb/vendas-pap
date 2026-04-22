@@ -204,8 +204,8 @@
             // Mock authentication
             if (email && password) {
                 console.log('Login attempt:', email);
-                // Redirect to dashboard (to be created)
-                window.location.href = 'dashboard.html';
+                // Redirect to dashboard using relative path
+                window.location.href = './dashboard.html';
             } else {
                 alert('Por favor, preencha todos os campos.');
             }
