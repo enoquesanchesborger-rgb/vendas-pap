@@ -260,9 +260,7 @@
                 nascimento: document.getElementById('birthdate').value
             };
             localStorage.setItem('cadastro_pessoal', JSON.stringify(userData));
-            
-            const baseUrl = window.location.href.split('?')[0].split('#')[0].replace(/cadastro\.html$/, '').replace(/\/?$/, '/');
-            window.location.href = baseUrl + 'cadastro_etapa2.html';
+            window.location.href = 'cadastro_etapa2.html';
         });
     </script>
 </body>
