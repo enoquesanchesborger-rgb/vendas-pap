@@ -280,7 +280,8 @@
             };
             localStorage.setItem('cadastro_plano', JSON.stringify(planData));
             
-            window.location.href = 'cadastro_etapa4.html';
+            const baseUrl = window.location.href.split('?')[0].split('#')[0].replace(/cadastro_etapa3\.html$/, '').replace(/\/?$/, '/');
+            window.location.href = baseUrl + 'cadastro_etapa4.html';
         });
     </script>
 </body>

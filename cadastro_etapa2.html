@@ -304,7 +304,8 @@
             };
             localStorage.setItem('cadastro_endereco', JSON.stringify(addressData));
             
-            window.location.href = 'cadastro_etapa3.html';
+            const baseUrl = window.location.href.split('?')[0].split('#')[0].replace(/cadastro_etapa2\.html$/, '').replace(/\/?$/, '/');
+            window.location.href = baseUrl + 'cadastro_etapa3.html';
         });
     </script>
 </body>

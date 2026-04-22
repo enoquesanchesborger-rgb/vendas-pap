@@ -407,7 +407,8 @@ Você confirma que está de acordo com todas essas informações?`;
             stats.comissao += 10;
             localStorage.setItem('vendedor_stats', JSON.stringify(stats));
 
-            window.location.href = 'sucesso.html';
+            const baseUrl = window.location.href.split('?')[0].split('#')[0].replace(/cadastro_etapa4\.html$/, '').replace(/\/?$/, '/');
+            window.location.href = baseUrl + 'sucesso.html';
         });
     </script>
 </body>

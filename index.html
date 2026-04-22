@@ -204,8 +204,9 @@
             // Mock authentication
             if (email && password) {
                 console.log('Login attempt:', email);
-                // Redirect to dashboard using relative path
-                window.location.href = './dashboard.html';
+                // Robust redirection for GitHub Pages and local dev
+                const baseUrl = window.location.href.split('?')[0].split('#')[0].replace(/index\.html$/, '').replace(/\/?$/, '/');
+                window.location.href = baseUrl + 'dashboard.html';
             } else {
                 alert('Por favor, preencha todos os campos.');
             }
